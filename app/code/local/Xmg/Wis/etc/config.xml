@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <modules>
+            <Xmg_Wis>
+                <version>0.1.0</version>
+            </Xmg_Wis>
+        </modules>
+        <blocks>
+            <wis>
+                <rewrite>
+                    <helloworld>Xmg_Wis_Block_HelloWorld</helloworld>
+                </rewrite>
+            </wis>
+        </blocks>
+
+    </global>
+    <frontend>
+        <routers>
+            <wis>
+                <use>standard</use>
+                <args>
+                    <module>Xmg_Wis</module>
+                    <frontName>wis</frontName>
+                </args>
+            </wis>
+        </routers>
+        <layout>
+            <updates>
+                <wis>
+                    <file>wis.xml</file>
+                </wis>
+            </updates>
+        </layout>
+    </frontend>
+</config>
