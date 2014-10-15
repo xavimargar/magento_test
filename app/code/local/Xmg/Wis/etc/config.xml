@@ -6,14 +6,23 @@
                 <version>0.1.0</version>
             </Xmg_Wis>
         </modules>
-        <blocks>
-            <wis>
-                <rewrite>
-                    <helloworld>Xmg_Wis_Block_HelloWorld</helloworld>
-                </rewrite>
-            </wis>
-        </blocks>
 
+        <models>
+            <xmg>
+                <class>Xmg_Wis_Model</class>
+            </xmg>
+        </models>
+        <events>
+            <checkout_submit_all_after>
+                <observers>
+                    <Xmg_Wis_Observer>
+                        <type>singleton</type>
+                        <class>Xmg_Wis_Model_Observer</class>
+                        <method>checkPayment</method>
+                    </Xmg_Wis_Observer>
+                </observers>
+            </checkout_submit_all_after>
+        </events>
     </global>
     <frontend>
         <routers>

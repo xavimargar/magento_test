@@ -1,12 +1,19 @@
 <?php
+
 class Xmg_Wis_IndexController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
     {
-//echo 'Hello Index!';
-  //$this->loadLayout(array('default'));
+        $this->loadLayout();
 
-    $this->loadLayout();
-  $this->renderLayout();
+        $orders = Mage::getModel('sales/order')->getCollection()
+            ->setOrder('created_at', 'DESC')->setPageSize(5)->load();
+
+        $block = $this->getLayout()->getBlock('wis');
+        $block->setData('orders', $orders);
+
+        $this->renderLayout();
+
+
     }
 }

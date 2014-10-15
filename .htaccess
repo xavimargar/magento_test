@@ -120,7 +120,7 @@
 ## you can put here your magento root folder
 ## path relative to web root
 
-    #RewriteBase /magento/
+    RewriteBase /~xavi/magento
 
 ############################################
 ## uncomment next line to enable light API calls processing
@@ -207,3 +207,4 @@
 ## http://developer.yahoo.com/performance/rules.html#etags
 
     #FileETag none
+SetEnv MAGE_IS_DEVELOPER_MODE "true"

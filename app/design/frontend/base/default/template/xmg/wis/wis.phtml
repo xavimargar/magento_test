@@ -1,3 +1,13 @@
+
 <?php
- echo "Hello World Wis";
+echo "Hello World Wis";
+echo '<ul>';
+
+foreach ($this->orders as $order) {
+    echo '<li>';
+    echo 'id:' . $order->getEntityId() . ' customer:' . $order->getCustomerName() . ' total:' . $order->getGrandTotal();
+    echo '</li>';
+}
+echo '</ul>';
 ?>
+
